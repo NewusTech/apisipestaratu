@@ -1,0 +1,268 @@
+API DOCS
+
+Content-Type : application/x-www-form-urlencoded
+Host : http://sipestaratu.tanggamus.go.id/apps/api
+- Login
+    route :
+        /auth
+    method :
+        POST
+    body :
+        form :
+            username
+            password
+    response :
+        error :
+            {
+                "error": "Username atau password salah"
+            },
+        success :
+            {
+                "status": true,
+                "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEifQ.QkNDxkFTmtlvoPBfJvDgoda-dK5BOikP_6LCs3irYmE",
+                "identitas": {
+                    "id": "1",
+                    "email": "admin@admin.com",
+                    "nama": "Admin istrator",
+                    "company": "ADMIN",
+                    "avatar": "1598349078.png"
+                    }
+            }
+
+- Master Satuan Berat
+    route :
+        /satuan_berat
+    method :
+        GET
+    headers :
+        Authorization {token}
+    response :
+        error :
+            {
+                "error": "Unauthorized"
+            },
+        success :
+            {
+                "data":
+                    [
+                        {"id":"1","satuan_berat":"KGS"}
+                    ],
+                "error":null
+            }
+
+- Master Logbook Group
+    route :
+        /logbook_group
+    method :
+        GET
+    headers :
+        Authorization {token}
+    response :
+        error :
+            {
+                "error": "Unauthorized"
+            },
+        success :
+            {
+                "data":
+                    [
+                        {"id":"1","logbook_group":"Timbulan"},
+                        {"id":"2""logbook_group":"Pemanfaatan"},
+                        {"id":"3","logbook_group":"Tidak Termanfaatkan"}
+                    ],
+                "error":null
+            }
+
+- Master Sampah Parent
+    route :
+        /sampah_parent
+    method :
+        GET
+    headers :
+        Authorization {token}
+    response :
+        error :
+            {
+                "error": "Unauthorized"
+            },
+        success :
+            {
+                "data": [
+                    {
+                        "id": "1",
+                        "nama_sampah": "Sisa Makanan",
+                        "nama_jenis": "Organiks"
+                    }
+                ],
+                "error": null
+            }
+
+    
+- Master Sampah Child
+    route :
+        /sampah_child
+    method :
+        POST
+    headers :
+        Authorization {token}
+    body :
+        form :
+            id_parent (sampah_parent id)
+    response :
+        error :
+            {
+                "error": "Unauthorized"
+            },
+        success :
+            {
+                "data": [
+                    {
+                        "id": "4",
+                        "nama_sampah": "Bahan Pakan Ternak",
+                        "nama_jenis": "Organiks"
+                    }
+                ],
+                "error": null
+            }
+
+- Transaksi Logbook
+    route :
+        /logbook
+    method :
+        POST
+    headers :
+        Authorization {token}
+    body :
+        form :
+            id_user : id user from Login
+            data : [
+                    {"sampah_id":1,"jumlah":10,"logbook_group_id":1,"satuan_id":1},
+                    {"sampah_id":2,"jumlah":5,"logbook_group_id":2,"satuan_id":1}
+                   ]
+    response :
+        error :
+            {
+                "msg" : "Data gagal disimpan"
+                "error": "Unauthorized" ->> contoh error
+            },
+        success :
+            {
+                "msg": "Data berhasil disimpan",
+                "error": null
+            }
+
+- History Logbook
+    route :
+        /history_logbook
+    method :
+        POST
+    headers :
+        Authorization {token}
+    body :
+        form
+            id : id user from login
+    response :
+        error : {
+            "error" : "Unauthorized"
+        },
+        success : {
+            "data": {
+                "id": "29", 
+                "logbook_user_profile_id": "3", 
+                "tanggal": "2020-12-13 22:01:39", 
+                "judul": "Laporan BHT", 
+                "jumlah": "2", 
+                "logbook_group": "Timbulan", "nama_sampah": "Sisa Makanan", "satuan_berat": "KGS"
+            }
+        }
+
+- Get Profil
+    route :
+        /profile_item
+    method :
+        POST
+    headers :
+        Authorization {token}
+    body :
+        form
+            id : id user from login
+    response :
+        error : {
+            "error" : "Unauthorized"
+        },
+        success : {
+            "data": {
+                "head": [
+                    {
+                        "id": "2",
+                        "user_id": "4",
+                        "lokasi_id": "4",
+                        "subjek_id": "1",
+                        "kabupaten_kota": "Kota Bandar Lampung",
+                        "kecamatan": "Way Halim",
+                        "kelurahan": "Gunung Sulah",
+                        "nama_subjek": "TPS3R Kota Agung Pusat"
+                    }
+                ],
+                "item": [
+                    [
+                        {
+                            "id": "2",
+                            "profile_item_id": "2",
+                            "user_profile_id": "2",
+                            "profile_item_value": "AAAAA",
+                            "profile_item_order": "1",
+                            "profile_item": "Jumlah Kendaraans"
+                        },
+                        {
+                            "id": "3",
+                            "profile_item_id": "2",
+                            "user_profile_id": "2",
+                            "profile_item_value": "asf",
+                            "profile_item_order": "2",
+                            "profile_item": "Jumlah Kendaraans"
+                        }
+                    ]
+                ]
+            },
+            "error": null
+            }
+        }
+
+- Harian Sampah
+    route :
+        /harian_sampah
+    method :
+        POST
+    headers :
+        Authorization {token}
+    body :
+        form
+            id : id user from login
+    response :
+        error : {
+            "error" : "Unauthorized"
+        },
+        success : {
+            "data": 5,
+            "error":
+        }
+
+- Bulanan Sampah
+    route :
+        /bulanan_sampah
+    method :
+        POST
+    headers :
+        Authorization {token}
+    body :
+        form
+            id : id user from login
+    response :
+        error : {
+            "error" : "Unauthorized"
+        },
+        success : {
+            "data": 5,
+            "error":
+        }
