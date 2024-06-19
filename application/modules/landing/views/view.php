@@ -6,6 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>SIPESTA RATU</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,13 +28,42 @@
 
   <!-- Template Main CSS File -->
   <link href="<?=base_url()?>assets/front/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Bootslander - v2.3.1
-  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .hero-section {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #28a745;
+        }
+        .hero-section h2 {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+        .hero-section img {
+            max-width: 300px;
+            margin: 30px 0;
+        }
+        .waves {
+            position: relative;
+            width: 100%;
+            height: 150px;
+        }
+        .waves svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,82 +71,25 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex align-items-center">
-
       <div class="logo mr-auto">
         <!-- <h1 class="text-light"><a href="index.html"><span>SIPESTA <br> RATU</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
          <a href="#"><img id="img-logo" width="150" src="<?=base_url()?>assets/front/img/logo_sipesta.png" alt="" class="img-fluid"></a>
       </div>
-
-      <!--<nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <!-- <li class="active"><a href="#">Landing</a></li> -->
-          <!-- <li><a href="#about">About</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li> -->
-
-        <!--</ul>
-      </nav><!-- .nav-menu -->
-
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
-          <div data-aos="zoom-out">
-            <h1>Let's Clean Up The Trash & <span> Recycle It!</span></h1>
-            <h2>Pembersihan bukan hanya untuk membersihkan, tetapi untuk merasakan kebahagian hidup dalam lingkungan tersebut</h2>
-            <div class="text-center text-lg-left">
-              <a href="https://play.google.com/store/apps/details?id=com.raiani.garbageapp"><img src="<?=base_url()?>assets/front/img/playstore.png" target="_blank" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-          <img src="<?=base_url()?>assets/front/img/hero-img.png" class="img-fluid animated" alt="">
-        </div>
+  <section class="hero-section">
+      <div class="container">
+          <h3>Welcome to <span>SIPESTARATU</span></h3>
+          <h1>Let's Clean Up The Trash & <span>Recycle It!</span></h1>
+          <h2>Pembersihan bukan hanya untuk membersihkan, tetapi untuk merasakan kebahagiaan hidup dalam lingkungan tersebut</h2>
+          <a href="https://play.google.com/store/apps/details?id=com.raiani.garbageapp" target="_blank">
+              <img src="assets/front/img/playstore.png" alt="Download on Play Store">
+          </a>
       </div>
-    </div>
-
-    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-      <defs>
-        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-      </defs>
-      <g class="wave1">
-        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(209,244,216, .5)">
-      </g>
-      <g class="wave2">
-        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(147,228,167, .5)"> 
-      </g>
-      <g class="wave3">
-        <use xlink:href="#wave-path" x="50" y="9" fill="rgb(86, 215, 129)">
-      </g>
-    </svg>
-
-  </section><!-- End Hero -->
+  </section>
 
   <main id="main">
 
@@ -124,20 +97,15 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="container">
       <div class="copyright">
-        All Rights Reserved
+        This app is
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a style="color: #000;" href="https://ginktech.net/">Gink Technology</a>
+        updated by <a style="color: #000;" href="#!">Newus Technology</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
   <div id="preloader"></div>
@@ -155,7 +123,9 @@
 
   <!-- Template Main JS File -->
   <script src="<?=base_url()?>assets/front/js/main.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
